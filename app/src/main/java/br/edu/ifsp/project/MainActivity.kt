@@ -3,7 +3,6 @@ package br.edu.ifsp.project
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.ComponentActivity
 import br.edu.ifsp.project.databinding.ActivityMainBinding
 import com.android.volley.Request
@@ -34,11 +33,11 @@ class MainActivity : ComponentActivity() {
         val queue: RequestQueue = Volley.newRequestQueue(this)
         val stringRequest = createRequestString()
         val imageRequest = createRequestImage()
-        queue.add(stringRequest as Request<*>?)
-        queue.add(imageRequest as Request<*>?)
+        queue.add(stringRequest)
+        queue.add(imageRequest)
     }
 
-    private fun createRequestString(): Any {
+    private fun createRequestString(): StringRequest {
         val urlTexto = "http://10.105.68.96:8080/exemplo/texto"
         return StringRequest(
             Request.Method.GET, urlTexto,
@@ -51,7 +50,7 @@ class MainActivity : ComponentActivity() {
             })
     }
 
-    private fun createRequestImage() : Any{
+    private fun createRequestImage() : ImageRequest{
         val urlImagem = "http://10.105.68.96:8080/exemplo/imagem"
         return ImageRequest(urlImagem,
             { response ->
