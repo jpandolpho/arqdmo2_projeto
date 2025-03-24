@@ -4,17 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_gerar"
+        android:text="Gerar"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Texto a ser apresentado."
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"/>
 
 </LinearLayout>
